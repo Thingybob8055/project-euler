@@ -1,2 +1,3 @@
 # project-euler
-Project Euler
+
+Casually trying to kill myself doing these challanges for fun :)
