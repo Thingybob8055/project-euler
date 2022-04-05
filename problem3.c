@@ -3,10 +3,13 @@
 #include <math.h>
 
 int main() {
-    long number = 13195;
+    long number = 600851475143;
+    int max = 1;
     int sqrt_number = (int)round(sqrt(number)); // 9
     //printf("[!]Rounded value: %d\n", sqrt_number);
-    int prime_factor_decomp[100] = {0};
+    int *prime_factor_decomp;
+    prime_factor_decomp = (int *)malloc(100 * sizeof(int));
+    int counter = 0;
     int number_array[sqrt_number - 2];
     for(int i = 2; i <= sqrt_number; i++) {
         number_array[i-2] = i;
@@ -21,17 +24,18 @@ int main() {
                     number = number/number_array[i];
                 }
                 else {
-                    prime_factor_decomp[i] = number_array[i];
-                    //printf("%d\t", prime_factor_decomp[i]);
+                    *(prime_factor_decomp + counter) = number_array[i];
+                    //printf("%d\t", *(prime_factor_decomp + counter));
+                    counter += 1;
                     break;
                 }
             } 
         }
     }
 
-    for(int i = 0; i<sizeof prime_factor_decomp/sizeof prime_factor_decomp[0];i++) {
-        printf("%d ", prime_factor_decomp[i]);
-    }
+    printf("Max Prime Factor is: %d", *(prime_factor_decomp + sizeof *prime_factor_decomp-1));
+
+    free(prime_factor_decomp);
 
    printf("\n");
     return 0;
