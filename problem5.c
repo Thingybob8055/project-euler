@@ -14,7 +14,7 @@ int main() {
         }
     }
 
-    printf("%d\n", n);
+    printf("LCM is: %d\n", n);
 
     return 0;
 }
