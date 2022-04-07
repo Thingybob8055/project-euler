@@ -1,3 +1,3 @@
 # project-euler
 
-Casually trying to kill myself doing these challanges for fun :)
+Casually trying to kill myself doing these challenges for fun :)
